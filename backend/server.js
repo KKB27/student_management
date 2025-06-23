@@ -5,6 +5,12 @@ import studentRoutes from "./router/student.router.js";
 const PORT = 3000;
 const app = express();
 
+import cors from 'cors';
+app.use(cors({
+  origin: "http://localhost:5173", // your Vite frontend
+  credentials: true
+}));
+
 dotenv.config();
 
 //import connectDB from './config/db.config.js';
