@@ -41,10 +41,7 @@ const NavigationBar = () => {
                 Sign In
               </Button>}
               {isSignIn && <NavDropdown title= {user} id="collapsible-nav-dropdown">
-              <NavDropdown.Item href="#action/3.1">Action</NavDropdown.Item>
-              <NavDropdown.Item href="#action/3.2">
-                Another action
-              </NavDropdown.Item>
+              <NavDropdown.Item href="profile">My Profile</NavDropdown.Item>
               <NavDropdown.Item onClick={handleLogOut}>
                 Log Out
               </NavDropdown.Item>
