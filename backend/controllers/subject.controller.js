@@ -64,3 +64,23 @@ export const updateSubject = async (req, res) => {
         res.status(500).json({ error: "Internal server error" });
     }
 }
+
+export const getAllSubjects = async(req,res) =>{
+    try{
+        const {id} = req.params;
+        const student = await studentModel.findById(id);
+        if (!student) {
+            return res.status(404).json({ error: "Student not found" });
+        }
+        const subjects = await subjectModel.find({ student: student._id }).select("name _id");
+        
+        if (!subjects || subjects.length === 0) {   
+            return res.status(404).json({ error: "No subjects found for this student" });
+        }
+
+        return res.status(200).json({ subjects });
+    } catch (error) {
+        console.error("Get all subjects error:", error);
+        res.status(500).json({ error: "Internal server error" });
+    }
+}
