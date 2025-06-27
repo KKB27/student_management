@@ -72,7 +72,7 @@ export const getAllSubjects = async(req,res) =>{
         if (!student) {
             return res.status(404).json({ error: "Student not found" });
         }
-        const subjects = await subjectModel.find({ student: student._id }).select("name _id");
+        const subjects = await subjectModel.find({ student: student._id }).select("name _id facultyName currentlyTaking category");
         
         if (!subjects || subjects.length === 0) {   
             return res.status(404).json({ error: "No subjects found for this student" });

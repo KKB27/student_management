@@ -137,7 +137,7 @@ const AssignmentsPage = () => {
               <Card className="h-100 shadow-sm">
                 <Card.Body>
                   <Card.Title>{assignment.subject?.name}</Card.Title>
-                  <Card.Subtitle className="mb-2 text-muted">
+                  <Card.Subtitle className="mb-2 text-muted" style={{color: "#6c757d"}}>
                     Due: {new Date(assignment.dueDate).toLocaleDateString()}
                   </Card.Subtitle>
                   <Card.Text>{assignment.description}</Card.Text>

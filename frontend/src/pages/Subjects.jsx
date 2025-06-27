@@ -33,7 +33,7 @@ const SubjectsPage = () => {
     setLoading(true);
     try {
       const res = await fetch(`${API_PREFIX}student/getsubjects/${decoded.id}`, {
-        headers: { Authorization: `Bearer ${token}` },
+        headers: { },
       });
       const data = await res.json();
 
