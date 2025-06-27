@@ -7,7 +7,7 @@ const app = express();
 
 import cors from 'cors';
 app.use(cors({
-  origin: "http://localhost:5173", // your Vite frontend
+  origin: "https://student-management-app-kkb27.netlify.app/", // your Vite frontend
   credentials: true
 }));
 
